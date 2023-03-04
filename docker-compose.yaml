@@ -2,11 +2,11 @@ version: "3"
 services:
   database:
     image: postgres
-    port:
+    ports:
       - 5432:5432
     restart:
       always
     environment:
-      POSTGRES_USER: user
+      POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testdb
