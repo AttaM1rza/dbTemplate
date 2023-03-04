@@ -1,12 +1,12 @@
 import configparser
-import pathlib
+import os
 
 # Setup base directory
-BASE_PATH = pathlib.Path("conf/settings").absolute()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Load environment variables
 config = configparser.ConfigParser()
-config.read(BASE_PATH.joinpath("config.ini"))
+config.read(BASE_DIR.joinpath("config.ini"))
 
 # get database configurations
 DATABASE = {
