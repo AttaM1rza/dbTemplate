@@ -3,10 +3,10 @@ import os
 
 # Setup base directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
+configFile = os.path.join(BASE_DIR, "config.ini")
 # Load environment variables
 config = configparser.ConfigParser()
-config.read(BASE_DIR.joinpath("config.ini"))
+config.read(configFile)
 
 # get database configurations
 DATABASE = {
