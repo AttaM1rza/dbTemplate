@@ -8,6 +8,7 @@ configFile = os.path.join(BASE_DIR, "config.ini")
 config = configparser.ConfigParser()
 config.read(configFile)  # todo make it better (independet with config file)
 print("-------------------------")
+print(configFile)
 print(config.get("database", "username"))
 # get database configurations
 DATABASE = {
