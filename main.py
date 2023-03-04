@@ -1,4 +1,4 @@
-from src.basic import run_db_select_statement
+from basic_src import run_db_select_statement
 
 
 def main():

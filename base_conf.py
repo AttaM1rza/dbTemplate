@@ -2,7 +2,7 @@ import configparser
 import pathlib
 
 # Setup base directory
-BASE_PATH = pathlib.Path(".").absolute()
+BASE_PATH = pathlib.Path("conf/settings").absolute()
 
 # Load environment variables
 config = configparser.ConfigParser()

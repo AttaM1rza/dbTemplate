@@ -1,5 +1,6 @@
 from sqlalchemy import text
-from db.core.initializer import create_connection
+
+from db_initializer import create_connection
 
 
 def run_db_select_statement():

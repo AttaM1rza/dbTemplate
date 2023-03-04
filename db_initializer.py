@@ -1,7 +1,7 @@
 # In this file, we'll initialize an engine using create_engine.
 
 from sqlalchemy import create_engine
-from conf.settings.base import DATABASE
+from base_conf import DATABASE
 
 # create database engine
 engine = create_engine(
@@ -14,6 +14,7 @@ engine = create_engine(
     ),
     echo=True
 )
+
 
 # create a connection with the database
 def create_connection():
