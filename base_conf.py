@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 configFile = os.path.join(BASE_DIR, "config.ini")
 # Load environment variables
 config = configparser.ConfigParser()
-config.read(configFile)
+config.read("config.ini")  # todo make it better (independet with config file)
 
 # get database configurations
 DATABASE = {
