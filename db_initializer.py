@@ -1,6 +1,8 @@
 # In this file, we'll initialize an engine using create_engine.
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
 from base_conf import DATABASE
 
 # create database engine
@@ -14,6 +16,22 @@ engine = create_engine(
     ),
     echo=True
 )
+
+#connection = engine.connect()
+base = declarative_base()
+
+class schedule(base):
+    __tablename__ = 'schedule'
+    id = Column(Integer, primary_key=True)
+    time = Column(String)
+    monday = Column(String)
+    tuesday = Column(String)
+    wednesday = Column(String)
+    thursday = Column(String)
+    friday = Column(String)
+    saturday = Column(String)
+
+base.metadata.create_all(engine)
 
 
 # create a connection with the database
