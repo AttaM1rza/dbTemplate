@@ -1,8 +1,28 @@
-from basic_src import run_db_select_statement
+from sqlalchemy import text, create_engine
+
+from conf import config
+
+# create database engine
+engine = create_engine(
+    f"postgresql+psycopg2://    \
+    {config['database']['username']}:   \
+    {config['database']['password']}@   \
+    {config['database']['host']}:   \
+    {config['database']['port']}/   \
+    {config['database']['name']}",
+    echo=True
+)
+
+
+def helloWorld():
+    """Creates a self closing connection to the database after outputting 'Hello World'"""
+    with engine.connect() as connection:
+        result = connection.execute(text("select 'Hello World'"))
+        print(result.all())
 
 
 def main():
-    run_db_select_statement()
+    helloWorld()
     return None
 
 
