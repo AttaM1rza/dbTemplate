@@ -1,12 +1,12 @@
 version: "3"
 services:
   database:
-    image: postgres:12-alpine
+    image: postgres:alpine
     ports:
       - 5432:5432
     restart:
       always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: testdb
+      POSTGRES_USER: animanga
+      POSTGRES_PASSWORD: animanga
+      POSTGRES_DB: animanga
