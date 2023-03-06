@@ -9,13 +9,9 @@ engine = create_engine(
 )
 
 
-def createConnection():
-    return engine.connect()
-
-
 def helloWorld():
     """Creates a self closing connection to the database after outputting 'Hello World'"""
-    with createConnection() as conn:
+    with engine.connect() as conn:
         result = conn.execute(text("select 'Hello World'"))
         print(result.all())
 
