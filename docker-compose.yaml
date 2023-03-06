@@ -3,7 +3,7 @@ services:
   atta:
     image: postgres:alpine
     ports:
-      - 5000:5000
+      - 4311:4311
     restart:
       always
     user:
