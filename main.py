@@ -18,7 +18,7 @@ def createConnection():
 
 def helloWorld():
     """Creates a self closing connection to the database after outputting 'Hello World'"""
-    with createConnection as connection:
+    with createConnection() as connection:
         result = connection.execute(text("select 'Hello World'"))
         print(result.all())
 
