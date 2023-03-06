@@ -3,17 +3,11 @@
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-from base_conf import DATABASE
+from conf import DATABASE, config
 
 # create database engine
 engine = create_engine(
-    "postgresql+psycopg2://{db_username}:{db_password}@{db_host}:{db_port}/{db_name}".format(
-        db_username=DATABASE['USERNAME'],
-        db_password=DATABASE['PASSWORD'],
-        db_host=DATABASE['HOST'],
-        db_port=DATABASE['PORT'],
-        db_name=DATABASE['NAME']
-    ),
+    f"postgresql+psycopg2://{config['database']['username']}:{config['database']['password']}@{config['database']['host']}:{config['database']['port']}/{config['database']['name']}",
     echo=True
 )
 
