@@ -7,8 +7,8 @@ services:
     restart:
       always
     user:
-      animanga
-    environment:
+      postgres # this user will create the above user
+    environment: # docker exec -it dbtemplate_database_1 psql -U animanga
       POSTGRES_USER: animanga
       POSTGRES_PASSWORD: animanga
       POSTGRES_DB: animanga
