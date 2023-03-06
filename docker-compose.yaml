@@ -1,6 +1,6 @@
 version: "3"
 services:
-  atta:
+  database:
     image: postgres:alpine
     ports:
       - 4321:4321
@@ -9,6 +9,6 @@ services:
     user:
       postgres # this user will create the above user
     environment: # docker exec -it dbtemplate_database_1 psql -U animanga
-      POSTGRES_USER: atta
-      POSTGRES_PASSWORD: attapw
-      POSTGRES_DB: atta
+      POSTGRES_USER: animanga
+      POSTGRES_PASSWORD: animanga
+      POSTGRES_DB: animanga
