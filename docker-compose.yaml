@@ -6,6 +6,8 @@ services:
       - 5432:5432
     restart:
       always
+    user:
+      animanga
     environment:
       POSTGRES_USER: animanga
       POSTGRES_PASSWORD: animanga
