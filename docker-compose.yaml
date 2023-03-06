@@ -3,7 +3,7 @@ services:
   database:
     image: postgres:alpine
     ports:
-      - 4321:4321
+      - 5432:5432
     restart:
       always
     user:
