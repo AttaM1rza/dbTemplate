@@ -3,6 +3,7 @@ from sqlalchemy import text, create_engine
 from conf import config
 
 # create database engine
+
 engine = create_engine(
     f"postgresql+psycopg2://{config['database']['username']}:{config['database']['password']}@{config['database']['host']}:{config['database']['port']}/{config['database']['name']}",
     echo=True
@@ -11,8 +12,10 @@ engine = create_engine(
 
 def helloWorld():
     """Creates a self closing connection to the database after outputting 'Hello World'"""
+
+    statement = "select 'Hello World'"
     with engine.connect() as conn:
-        result = conn.execute(text("select 'Hello World'"))
+        result = conn.execute(text(statement))
         print(result.all())
 
 
